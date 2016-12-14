@@ -1,6 +1,8 @@
-body {
-	padding: 0px;
-	margin: 0px;
+html, body {
+    padding: 0px;
+    width:  100%;
+    height: 100%;
+    margin: 0px;
 }
 @font-face { 
     font-family: 'PFHandbook-Regular';
@@ -13,7 +15,9 @@ img.map{
 	position: absolute;
 	z-index: -100;
 }
-
+div.coupang {
+    position: absolute;
+}
 .font-coupang {
 	display: inline-block;
     font-family: PFHandbook-Regular;
@@ -37,4 +41,8 @@ h1[brand-color='n'] {
 }
 h1[brand-color='g'] {
     color: #48a7df;
+}
+
+canvas {
+    position: absolute;
 }
