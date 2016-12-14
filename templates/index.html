@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../static/css/demo.css">
     <link rel="stylesheet" href="../static/css/forkit.css">
     <link rel="stylesheet" href="../static/css/terminalPage.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
 </head>
 
 <body>
@@ -41,11 +45,21 @@
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="../static/images/setting.png">
     </a>
     <!-- </div> -->
+
+    <div class="buttonTest">
+        <p>
+            <span id="dx">?</span> &
+            <span id="dy">?</span>
+        <p>
+        <a href=# id="calculate">generate</a>
+    </div>
+
 </body>
 <script src="../static/js/jquery-1.12.3.js"></script>
 <script src="../static/js/forkit.js"></script>
 <script src="../static/js/geolocation.js"></script>
 <script src="../static/js/drawMap.js"></script>
+<script src="../static/js/button.js"></script>
 <script src="../static/js/terminalPage.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js'></script>
 
