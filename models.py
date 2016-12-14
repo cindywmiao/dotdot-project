@@ -1,14 +1,30 @@
 from faker import Factory
+import sqlite3
 
+def get_conn():
+    return sqlite3.connect("test.db")
 
 class User(object):
-    def __init__(self, user_id, user_name, user_address):
+    def __init__(self, user_id):
         self.user_id = user_id
-        self.user_name = user_name
-        self.user_address = user_address
+        faker = Factory.create()
+        self.user = faker
+
+    def save(self):
+        sql = 'insert into user VALUES (?,?,?,?,?)'
+        conn = get_conn()
+        cursor = conn.cursor()
+        name = self.user.name()
+        address = self.user.address()
+        longitude = self.user.longitude()
+        latitude = self.user.latitude()
+        cursor.execute(sql, (self.user_id, name, address, float(longitude), float(latitude)))
+        conn.commit()
+        cursor.close()
+        conn.close()
 
     def __str__(self):
-        return 'User=> id:{} name:{} address:{}'.format(self.user_id, self.user_name, self.user_address)
+        return 'User=> id:{} name:{} '.format(self.user_id, self.user)
 
 
 class Item(object):
