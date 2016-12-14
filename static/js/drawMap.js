@@ -12,6 +12,7 @@ var drawMap = function() {
 
     // That's how you define the value of a pixel //
     function drawPixel(x, y, r, g, b, a) {
+        console.log('draw 1');
         var index = (x + y * canvasWidth) * 4;
         canvasData.data[index + 0] = r;
         canvasData.data[index + 1] = g;
@@ -22,13 +23,24 @@ var drawMap = function() {
     // That's how you update the canvas, so that your //
     // modification are taken in consideration //
     function updateCanvas() {
+        console.log('draw 2');
         ctx.putImageData(canvasData, 10, 0);
     }
-    drawPixel(100, 10, 255,242,0,255);
-    drawPixel(100, 20, 255,242,0,255);
-    drawPixel(100, 30, 255,242,0,255);
-    updateCanvas();
+
+   $('a#calculate').unbind('click').click(function() {
+      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {}, function(data) {
+          $('#dx').text(data.x);
+          $('#dy').text(data.y);
+          var x = $('#dx').text();
+          var y = $('#dy').text();
+          console.log(x);
+          console.log(y);
+          drawPixel(x*5, y*5, 255,242,0,255);
+          updateCanvas();
+        });
+        //return false;
+    });
 }
 
-
 drawMap();
+
