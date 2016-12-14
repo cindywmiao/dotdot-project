@@ -1,3 +1,4 @@
+//draw the map dot
 var drawMap = function() {
     var width = $('img').width();
     height = $('img').height();
@@ -27,20 +28,26 @@ var drawMap = function() {
         ctx.putImageData(canvasData, 10, 0);
     }
 
-   $('a#calculate').unbind('click').click(function() {
-      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {}, function(data) {
-          $('#dx').text(data.x);
-          $('#dy').text(data.y);
-          var x = $('#dx').text();
-          var y = $('#dy').text();
-          console.log(x);
-          console.log(y);
-          drawPixel(x*5, y*5, 255,242,0,255);
-          updateCanvas();
+    $('a#calculate').unbind('click').click(function() {
+        $.getJSON($SCRIPT_ROOT + '/_add_numbers', {}, function(data) {
+            $('#dx').text(data.x);
+            $('#dy').text(data.y);
+            var x = $('#dx').text();
+            var y = $('#dy').text();
+            console.log(x);
+            console.log(y);
+            drawPixel(x * 5, y * 5, 255, 242, 0, 255);
+            updateCanvas();
         });
         //return false;
     });
 }
-
 drawMap();
 
+
+function showInfoModel(userName,address,item) {
+    this.userName = userName;
+    this.address = address;
+    this.item = item;
+}
+ko.applyBindings(new showInfoModel('Monica','Shanghai','Food'),document.querySelector('.forkit-curtain h2'));
