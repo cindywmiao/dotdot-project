@@ -57,9 +57,10 @@ del {
 }
 
 .forkit-curtain {
-	text-align: center;
-	background: rgba( 0, 0, 0, 0.8 );
-	padding-top: 10%;
+	text-align: left;
+    background: rgba( 0, 0, 0, 0.8 );
+    padding-top: 5%;
+    padding-left: 10%;
 }
 	.forkit-curtain  .close-button {
 		position: absolute;
