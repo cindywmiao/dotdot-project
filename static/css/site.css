@@ -1,0 +1,40 @@
+body {
+	padding: 0px;
+	margin: 0px;
+}
+@font-face { 
+    font-family: 'PFHandbook-Regular';
+    src: url('../fonts/PFHandbookPro-Regular.otf');
+    src: url('../fonts/PFHandbookPro-Regular.ttf') format('truetype'); 
+}
+img.map{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -100;
+}
+
+.font-coupang {
+	display: inline-block;
+    font-family: PFHandbook-Regular;
+    font-size: 70px;
+    margin: -3px;
+    padding: 2px;
+    transition: all 0.5s linear;
+}
+
+h1[brand-color='c'], h1[brand-color='o'], h1[brand-color='u'] {
+	color: #571212;
+}
+h1[brand-color='p'] {
+    color: #d40e0d;
+}
+h1[brand-color='a'] {
+    color: #f89e1f;
+}
+h1[brand-color='n'] {
+    color: #84c13a;
+}
+h1[brand-color='g'] {
+    color: #48a7df;
+}

@@ -1,0 +1,40 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block head %}
+    {{ super() }}
+    {% include 'includes/_head.html' %}
+{% endblock %}
+
+
+{% block navbar %}
+    {# { nav.top.render() }} #}
+    {% include 'includes/_navbar.html' %}
+{% endblock %}
+
+
+{% block content %}
+    {% block header %}
+        <img class="map" src="../static/images/background2.jpg">
+    {% endblock %}
+    {% block page_body %}
+        <div class="coupang">
+    	    <h1 class="font-coupang" brand-color="c">c</h1>
+    	    <h1 class="font-coupang" brand-color="o">o</h1>
+    	    <h1 class="font-coupang" brand-color="u">u</h1>
+    	    <h1 class="font-coupang" brand-color="p">p</h1>
+    	    <h1 class="font-coupang" brand-color="a">a</h1>
+    	    <h1 class="font-coupang" brand-color="n">n</h1>
+    	    <h1 class="font-coupang" brand-color="g">g</h1>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+
+
+{% block footer %}
+{% endblock %}
