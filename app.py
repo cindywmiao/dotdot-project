@@ -12,6 +12,19 @@ def home():
 def example():
     return render_template('example.html')
 
+@app.route('/_calculate')
+def calculate():
+    print('here')
+    #return jsonify(result='I Catch a BUG!')
+    return "Here"
+
+@app.route('/_add_numbers')
+def add_numbers():
+    """Add two numbers server side, ridiculous but well..."""
+    a = request.args.get('a', 0, type=int)
+    b = request.args.get('b', 0, type=int)
+    return jsonify(result=a,result2=b)
+
 
 # @app.template_test('current_link')
 # def is_current_link(link):
