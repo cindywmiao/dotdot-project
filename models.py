@@ -34,7 +34,6 @@ class Item(object):
         self.item_id = item_id;
         index = randint(0,63)
         line = lines[index].split(',')
-        print(line)
         self.unit = line[0]
         self.category = line[1][:-1]
 
