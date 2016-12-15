@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="../static/css/terminalPage.css">
     <link rel="stylesheet" href="../static/css/showInfo.css">
     <script type="text/javascript">
-    var $SCRIPT_ROOT = {{
+    var $SCRIPT_ROOT = {
+        {
             request.script_root | tojson | safe
-        }};
+        }
+    };
     </script>
     <script src="../static/js/jquery-1.12.3.js"></script>
     <script src="../static/js/knockout.js"></script>
@@ -20,7 +22,7 @@
 
 <body>
     <div class="container">
-        <img class="map" src="../static/images/background_old.jpg">
+        <img class="map" src="../static/images/background2.jpg">
         <div class="coupang">
             <h1 class="font-coupang" brand-color="c">c</h1>
             <h1 class="font-coupang" brand-color="o">o</h1>
@@ -42,12 +44,12 @@
         </a>
         <div class="buttonTest">
             <p>
-                <span id="dx"></span>
-                <span id="dy"></span>
-                <span id="name">Monica Huang</span>
-                <span id="city">ShangHai</span>
-                <span id="unit">Personal Care</span>
-                <span id="category">Oral Care</span>
+                <span id="dx">?</span>
+                <span id="dy">?</span>
+                <span id="name">?</span>
+                <span id="city">?</span>
+                <span id="unit">?</span>
+                <span id="category">?</span>
             </p>
             <a href=# id="calculate" data-bind="click: addCustomer">generate</a>
         </div>
