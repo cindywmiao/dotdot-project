@@ -1,46 +1,33 @@
 //draw the map dot
 var drawMap = function() {
-    var width = $('img').width();
-    height = $('img').height();
-
-    $('canvas').width(screen.availWidth);
 
     var canvas = document.getElementById("myCanvas");
-    var canvasWidth = canvas.width;
-    var canvasHeight = canvas.height;
+    canvas.width = window.screen.availWidth;
+    canvas.height = window.screen.availHeight;
+
     var ctx = canvas.getContext("2d");
-    var canvasData = ctx.getImageData(0, 0, canvasWidth, canvasHeight);
+    var radial = ctx.createRadialGradient(250,250,0,200,200,100);
+    radial.addColorStop(0,"#ff0000");
+    radial.addColorStop(0.5,"#FFDD00");
+    radial.addColorStop(1,"#FFDD00");
 
-    // That's how you define the value of a pixel //
-    function drawPixel(x, y, r, g, b, a) {
-        console.log('draw 1');
-        var index = (x + y * canvasWidth) * 4;
-        canvasData.data[index + 0] = r;
-        canvasData.data[index + 1] = g;
-        canvasData.data[index + 2] = b;
-        canvasData.data[index + 3] = a;
-    }
 
-    // That's how you update the canvas, so that your //
-    // modification are taken in consideration //
-    function updateCanvas() {
-        console.log('draw 2');
-        ctx.putImageData(canvasData, 10, 0);
-    }
 
-    $('a#calculate').unbind('click').click(function() {
+        $('a#calculate').unbind('click').click(function() {
         $.getJSON($SCRIPT_ROOT + '/_add_numbers', {}, function(data) {
             $('#dx').text(data.x);
             $('#dy').text(data.y);
             var x = $('#dx').text();
             var y = $('#dy').text();
-            console.log(x);
-            console.log(y);
-            drawPixel(x * 5, y * 5, 255, 242, 0, 255);
-            updateCanvas();
+
+            ctx.beginPath();
+            ctx.fillStyle = radial;
+            ctx.arc(x, y ,3, 0, 2*Math.PI,false);
+            ctx.fill();
         });
-        //return false;
+
     });
+
 }
 drawMap();
 

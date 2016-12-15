@@ -13,125 +13,115 @@
   top: 25%;
 }
 .hello h2 {
-    font-family: courier, serif;
+  font-family: 'AndaleMono', monospace;
   position: absolute;
-  color: #152860;
+  color: #AAB2BD;
   text-align: center;
   white-space: nowrap;
   font-size: 30px;
   letter-spacing: 0.0625em;
-  width: 1065px;
+  /*width: 1065px;*/
+  width: 0px;
+  overflow-x: hidden;
+  animation: move 4s 1s forwards steps(2);
+
 }
-.hello h2:after {
+/*.hello h2:after {
   display: block;
   position: absolute;
   content: '';
   width: 1065px;
-  height: 2ex;
+  height: 2.5ex;
   left: 0;
   top: 0;
-  background: #eff5ed;
-  animation: 0.6s blink 20, move 7s 1s forwards steps(3);
-  border-left: 1px solid #152860;
-  box-shadow: 0px 1ex 0px 0px #eff5ed;
-}
+  background: black;
+  animation: move 4s 1s forwards steps(3);
+  border-left: 1px solid #AAB2BD;
+}*/
 @keyframes move {
   0% {
-    width: 100%;
-    left: 0;
+    width: 0px;
+    // left: 0;
   }
   5% {
-    width: 95%;
-    left: 5%;
+    width: 50px;
+    // left: 5%;
   }
   10% {
-    width: 90%;
-    left: 10%;
+    width: 100px;
+    // left: 10%;
   }
   15% {
-    width: 85%;
-    left: 15%;
+    width: 150px;
+    // left: 15%;
   }
   20% {
-    width: 80%;
-    left: 20%;
+    width: 200px;
+    // left: 20%;
   }
   25% {
-    width: 75%;
-    left: 25%;
+    width: 250px;
+    // left: 25%;
   }
   30% {
-    width: 70%;
-    left: 30%;
+    width: 300px;
+    // left: 30%;
   }
   35% {
-    width: 65%;
-    left: 35%;
+    width: 350px;
+    // left: 35%;
   }
   40% {
-    width: 60%;
-    left: 40%;
+    width: 400px;
+    // left: 40%;
   }
   45% {
-    width: 55%;
-    left: 45%;
+    width: 450px;
+    // left: 45%;
   }
   50% {
-    width: 50%;
-    left: 50%;
+    width: 500px;
+    // left: 50%;
   }
   55% {
-    width: 45%;
-    left: 55%;
+    width: 550px;
+    // left: 55%;
   }
   60% {
-    width: 40%;
-    left: 60%;
+    width: 600px;
+    // left: 60%;
   }
   65% {
-    width: 35%;
-    left: 65%;
+    width: 650px;
+    // left: 65%;
   }
   70% {
-    width: 30%;
-    left: 70%;
+    width: 700px;
+    // left: 70%;
   }
   75% {
-    width: 25%;
-    left: 75%;
+    width: 750px;
+    // left: 75%;
   }
   80% {
-    width: 20%;
-    left: 80%;
+    width: 800px;
+    // left: 80%;
   }
   85% {
-    width: 15%;
-    left: 85%;
+    width: 850px;
+    // left: 85%;
   }
   90% {
-    width: 10%;
-    left: 90%;
+    width: 900px;
+    // left: 90%;
   }
   95% {
-    width: 5%;
-    left: 95%;
+    width: 950px;
+    // left: 95%;
   }
   100% {
-    width: 0;
-    left: 100%;
+    width: 1065px;
+    // left: 100%;
   }
 }
-@keyframes blink {
-  0% {
-    border-left-color: #152860;
-  }
-  50% {
-    border-left-color: #152860;
-  }
-  51% {
-    border-left-color: #eff5ed;
-  }
-  100% {
-    border-left-color: #eff5ed;
-  }
-}
+
