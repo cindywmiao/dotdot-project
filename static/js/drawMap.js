@@ -28,7 +28,7 @@ var drawMap = function() {
     var trigeerClick = function() {
             $('a#calculate').trigger('click');
         }
-    //setInterval(trigeerClick, Math.random()*100+100);
+    setInterval(trigeerClick, Math.random()*100+100);
 
 }
 drawMap();
@@ -47,9 +47,9 @@ function showInfoModel() {
     );
     self.addCustomer = function() {
         var name_c = $('#name').text(),
-        city_c = $('#city').text(),
-        unit_c = $('#unit').text(),
-        category_c = $('#category').text();
+            city_c = $('#city').text(),
+            unit_c = $('#unit').text(),
+            category_c = $('#category').text();
 
         self.customerInfo.push({
             name: name_c,
@@ -68,11 +68,10 @@ $("canvas#myCanvas").on("mousedown", function(e) {
             getY = e.pageY;
 
         $('div.modelCurtain').css({ 'top': getY - 100, 'left': getX - 100 });
-        $('div.modelCurtain').animate({ opacity: "0.2" });
+        $('div.modelCurtain').animate({ opacity: "0.8" });
         setTimeout(function() {
             $('div.modelCurtain').animate({ opacity: "0" });
-        }, 5000);
-        console.log(getX + " / " + getY);
+        }, 7000);
 
         $('#top1').text(data.top1);
         $('#top2').text(data.top2);
@@ -86,10 +85,45 @@ $("canvas#myCanvas").on("mousedown", function(e) {
         var top2 = $('#top2').text();
         var top3 = $('#top3').text();
 
-        var prob1 = $('#prob1').text();
-        var prob2 = $('#prob2').text();
-        var prob3 = $('#prob3').text();
+        var prob1 = parseFloat($('#prob1').text()).toFixed(2)*100;
+        var prob2 = parseFloat($('#prob2').text()).toFixed(2)*100;
+        var prob3 = parseFloat($('#prob3').text()).toFixed(2)*100;
 
-        console.log('top1' + top1);
+        dataTatal = [
+        {
+            data: [[0, prob1]],
+            label: top1
+        }, {
+            data: [
+                [1, prob2]
+            ],
+            label: top2
+        }, {
+            data: [
+                [3, prob3]
+            ],
+            label: top3
+        }];
+        Flotr.draw(document.getElementById("chart"), dataTatal, {
+            pie: {
+                show: true,
+            },
+            yaxis: {
+                showLabels: false,
+            },
+            xaxis: {
+                showLabels: false,
+            },
+            grid: {
+                horizontalLines: false,
+                verticalLines: false,
+                outlineWidth: 0,
+            },
+            legend : { 
+                backgroundColor : null ,
+                backgroundOpacity: 0.3,
+            }
+
+        });
     });
 });

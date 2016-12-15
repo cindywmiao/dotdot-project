@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../static/css/site.css">
     <link rel="stylesheet" href="../static/css/demo.css">
     <link rel="stylesheet" href="../static/css/forkit.css">
-    <link rel="stylesheet" href="../static/css/terminalPage.css">
+<!--     <link rel="stylesheet" href="../static/css/terminalPage.css"> -->
     <link rel="stylesheet" href="../static/css/showInfo.css">
     <script type="text/javascript">
     var $SCRIPT_ROOT = {{
@@ -16,6 +16,7 @@
     </script>
     <script src="../static/js/jquery-1.12.3.js"></script>
     <script src="../static/js/knockout.js"></script>
+    <script src="../static/js/flotr2.min.js"></script>
 </head>
 
 <body>
@@ -51,16 +52,16 @@
             </p>
             <a href=# id="calculate" data-bind="click: addCustomer">generate</a>
         </div>
-        <div class="modelCurtain">
+        <div class="modelCurtain" id="chart">
         </div>
         <div class="buttonTest">
             <p>
-                <span id="top1" data-bind="text:top1">?</span>
-                <span id="prob1" data-bind="text:prob1">?</span>
-                <span id="top2" data-bind="text:top2">?</span>
-                <span id="prob2" data-bind="text:prob2">?</span>
-                <span id="top3" data-bind="text:top3">?</span>
-                <span id="prob3" data-bind="text:prob3">?</span>
+                <span id="top1">?</span>
+                <span id="prob1">?</span>
+                <span id="top2">?</span>
+                <span id="prob2">?</span>
+                <span id="top3">?</span>
+                <span id="prob3">?</span>
             </p>
         </div>
     </div>
@@ -68,6 +69,7 @@
 <script src="../static/js/forkit.js"></script>
 <script src="../static/js/geolocation.js"></script>
 <script src="../static/js/drawMap.js"></script>
-<script src="../static/js/terminalPage.js"></script>
+<!-- <script src="../static/js/terminalPage.js"></script> -->
+
 
 </html>

@@ -53,12 +53,12 @@ div.buttonTest {
 }
 
 .modelCurtain {
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 270px;
     position: absolute;
-    background: white;
+    background: rgba(255, 255, 255, 0.3);
     opacity: 0;
-    border-radius: 90px;
+    border-radius: 10px;
     top:200px;
     left: 200px;
 }
