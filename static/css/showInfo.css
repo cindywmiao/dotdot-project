@@ -7,14 +7,14 @@
 }*/
 
 .hello {
-   position: absolute;
-  left: 10%;
-  transform: translate(-50%, -50%);
-  top: 25%;
+position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 25%;
 }
 .hello h2 {
   font-family: 'AndaleMono', monospace;
-  position: absolute;
+  position: relative;
   color: #AAB2BD;
   text-align: center;
   white-space: nowrap;

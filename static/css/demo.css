@@ -56,12 +56,13 @@ del {
 	left: 20px;
 }
 
-.forkit-curtain {
-	text-align: left;
-    background: rgba( 0, 0, 0, 0.8 );
-    padding-top: 5%;
-    padding-left: 10%;
-}
+//     .forkit-curtain {
+    // 	text-align: left;
+    //     background: rgba( 0, 0, 0, 0.8 );
+    //     padding-top: 5%;
+    //     padding-left: 10%;
+    // }
+
 	.forkit-curtain  .close-button {
 		position: absolute;
 		width: 32px;
