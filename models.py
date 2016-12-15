@@ -1,5 +1,7 @@
 from faker import Factory
 import sqlite3
+from random import randint
+
 
 def get_conn():
     return sqlite3.connect("test.db")
@@ -11,7 +13,7 @@ class User(object):
         self.user = faker
 
     def save(self):
-        sql = 'insert into user VALUES (?,?,?,?,?)'
+        sql = 'insert into users VALUES (?,?,?,?,?)'
         conn = get_conn()
         cursor = conn.cursor()
         name = self.user.name()
@@ -28,9 +30,23 @@ class User(object):
 
 
 class Item(object):
-    def __init__(self, item_id, item_name):
-        self.item_id = item_id
-        self.item_name = item_name
+    def __init__(self, item_id, lines):
+        self.item_id = item_id;
+        index = randint(0,63)
+        line = lines[index].split(',')
+        print(line)
+        self.unit = line[0]
+        self.category = line[1][:-1]
+
+    def save(self):
+        sql = 'insert into items VALUES (?,?,?)'
+        conn = get_conn()
+        cursor = conn.cursor()
+        cursor.execute(sql, (self.item_id, self.unit, self.category ))
+        conn.commit()
+        cursor.close()
+        conn.close()
+
 
     def __str__(self):
-        return 'Item=> id:{} name:{}'.format(self.item_id, self.item_name)
+        return 'Item => unit:{} category:{}'.format(self.unit, self.category)
