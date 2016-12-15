@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-    jQuery Example
-    ~~~~~~~~~~~~~~
-
-    A simple application that shows how Flask and jQuery get along.
-
-    :copyright: (c) 2015 by Armin Ronacher.
-    :license: BSD, see LICENSE for more details.
-"""
 from flask import Flask, jsonify, render_template, request
 
 from faker import Factory
@@ -16,6 +6,7 @@ import math
 import sqlite3
 import os
 from flask_bootstrap import Bootstrap
+import utils as utils
 
 #self.user.longitude(), self.user.latitude
 index_counter = 0
@@ -42,24 +33,19 @@ def add_numbers():
     """Add two numbers server side, ridiculous but well..."""
     global index_counter
     customer = User(index_counter)
+    customer.save()
+
     index_counter += 1
 
     longitude = customer.user.longitude()
     latitude = customer.user.latitude()
 
-    dx = math.floor(abs(longitude))
-    dy = math.floor(abs(latitude))
+    result = utils.coordinate2pixel(longitude, latitude)
 
-    customer.save()
-
-    return jsonify(x=dx, y=dy)
+    return jsonify(x=result['x'], y=result['y'])
 
 
 @app.route('/')
-def example():
-    return render_template('example.html')
-
-@app.route('/home')
 def index():
     return render_template('index.html')
 
