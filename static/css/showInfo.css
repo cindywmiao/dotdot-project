@@ -15,7 +15,7 @@ position: relative;
 .hello h2 {
   font-family: 'AndaleMono', monospace;
   position: relative;
-  color: #AAB2BD;
+  color: #1ff042;
   text-align: center;
   white-space: nowrap;
   font-size: 30px;
@@ -26,18 +26,7 @@ position: relative;
   animation: move 4s 1s forwards steps(2);
 
 }
-/*.hello h2:after {
-  display: block;
-  position: absolute;
-  content: '';
-  width: 1065px;
-  height: 2.5ex;
-  left: 0;
-  top: 0;
-  background: black;
-  animation: move 4s 1s forwards steps(3);
-  border-left: 1px solid #AAB2BD;
-}*/
+
 @keyframes move {
   0% {
     width: 0px;

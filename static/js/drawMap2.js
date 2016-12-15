@@ -37,8 +37,8 @@ var drawMap = function() {
         self.customerInfo.push({ name: 'userName', city: 'city', item: 'items' });
     };
 }
-ko.cleanNode('.forkit-curtain');
-ko.applyBindings(new showInfoModel('Monica', 'Shanghai', 'Food'), document.querySelector('.forkit-curtain'));
+// ko.cleanNode('.forkit-curtain');
+// ko.applyBindings(new showInfoModel('Monica', 'Shanghai', 'Food'), document.querySelector('.forkit-curtain'));
         });
 
 

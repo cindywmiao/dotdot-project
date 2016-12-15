@@ -42,8 +42,9 @@
             <p class="prompt">The page you requested cannot be found right meow. Try typing 'kittens'.</p>
             <p class="prompt output new-output"></p>
         </div> -->
-        <div class="hello">
-            <h2 data-bind="text: 'One customer : ' + ' ' + userName + 'in address: ' + address + 'bought: ' + item +'.'"></h2>
+        
+        <div class="hello" data-bind="foreach: customerInfo">
+            <h2 data-bind="text: 'One customer : ' + ' ' + name + 'in address: ' + city + 'bought: ' + item.unit + item.category +'.'"></h2>
         </div>
     </div>
     <a class="forkit" data-text="Setting" data-text-detached="Setting" href="https://github.com/hakimel/forkit.js">
@@ -53,14 +54,14 @@
 
     <div class="buttonTest">
         <p>
-            <span id="dx">?</span>
-            <span id="dy">?</span>
-            <span id="name">?</span>
-            <span id="city">?</span>
-            <span id="unit">?</span>
-            <span id="category">?</span>
+            <span id="dx" hidden="hidden">?</span>
+            <span id="dy" hidden="hidden">?</span>
+            <span id="name" hidden="hidden">?</span>
+            <span id="city" hidden="hidden">?</span>
+            <span id="unit" hidden="hidden">?</span>
+            <span id="category" hidden="hidden">?</span>
         <p>
-        <a href=# id="calculate">generate</a>
+        <a href=# id="calculate" data-bind="click: addCustomer">generate</a>
     </div>
 
 </body>
