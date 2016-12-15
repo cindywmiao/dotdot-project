@@ -1,6 +1,4 @@
 //draw the map dot
-var name,city,unit,category;
-
 var drawMap = function() {
     var canvas = document.getElementById("myCanvas");
     canvas.width = window.screen.availWidth;
@@ -23,10 +21,10 @@ var drawMap = function() {
 
             var x = $('#dx').text();
             var y = $('#dy').text();
-             name = $('#name').text();
-             city = $('#city').text();
-             unit = $('#unit').text();
-             category = $('#category').text();
+            var name = $('#name').text();
+            var city = $('#city').text();
+            var unit = $('#unit').text();
+            var category = $('#category').text();
 
 
             ctx.beginPath();
@@ -34,43 +32,62 @@ var drawMap = function() {
             ctx.arc(x, y, 3, 0, 2 * Math.PI, false);
             ctx.fill();
         });
-
     });
-    //make data loading automatically
-    var trigeerClick = function(){
-        $('a#calculate').trigger('click');
-    }
-    setInterval(trigeerClick, Math.random()*100+100);
+
+
+    make data loading automatically
+       var trigeerClick = function(){
+           $('a#calculate').trigger('click');
+       }
+    //setInterval(trigeerClick, Math.random()*100+100);
 
 }
 drawMap();
 
-function showInfoModel(userName, city, unit, category) {
-    
-    var self = this;
-    self.customerInfo = ko.observableArray(
-        [{
-            name: userName,
-            city: city,
-            item: {
-                unit: unit,
-                category: category
-            }
-        }]
-    );
-    self.addCustomer = function() {
-        console.log(userName);
-        self.customerInfo.push({ name: 'userName', city: 'city', item: {
-                unit: 'unit',
-                category: 'category'
-            }});
-    };
-}
+// function showInfoModel() {
 
-ko.applyBindings(new showInfoModel(name, city, unit, category), document.querySelector('.forkit-curtain'));
+//     var self = this;
+//     var name_c = $('#name').text(),
+//         city_c = $('#city').text(),
+//         unit_c = $('#unit').text(),
+//         category_c = $('#category').text();
+
+//     self.customerInfo = ko.observableArray(
+//         [{
+//             name: 'userName',
+//             city: 'city',
+
+//                 unit: 'unit',
+//                 category: 'category'
+
+//         }]
+//     );
+//     self.changeInfo = ko.observableArray(
+//         [{
+//             name: ko.observable(name_c),
+//             city: ko.observable(city_c),
+//                 unit: ko.observable(unit_c),
+//                 category: ko.observable(category_c)
+
+//         }]
+//     );
+//     self.addCustomer = ko.dependentObservable(function() {
+//         console.log('in');
+//         self.customerInfo.push(self.changeInfo);
+//     });
+// }
+
+// ko.applyBindings(new showInfoModel(), document.querySelector('.forkit-curtain'));
+
 
 $("canvas#myCanvas").on("mousedown", function(e) {
     var getX = e.pageX,
         getY = e.pageY;
+
+    $('div.modelCurtain').css({ 'top': getY - 100, 'left': getX - 100 });
+    $('div.modelCurtain').animate({ opacity: "0.2" });
+    setTimeout(function() {
+        $('div.modelCurtain').animate({ opacity: "0" });
+    }, 5000);
     console.log(getX + " / " + getY);
 });

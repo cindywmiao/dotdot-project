@@ -29,22 +29,12 @@
         <h1 class="font-coupang" brand-color="g">g</h1>
     </div>
     <canvas class="canvasMap" id="myCanvas"></canvas>
-    <!-- <div class="forkit-curtain">
-            <div class="close-button"></div>
-            <h2>Setting</h2>
-        </div> -->
     <div class="forkit-curtain">
         <div class="close-button"></div>
-        <!-- <form class="four-oh-four-form">
-            <input type="text" class="404-input">
-        </form>
-        <div class="terminal">
-            <p class="prompt">The page you requested cannot be found right meow. Try typing 'kittens'.</p>
-            <p class="prompt output new-output"></p>
-        </div> -->
+
         
         <div class="hello" data-bind="foreach: customerInfo">
-            <h2 data-bind="text: 'One customer : ' + ' ' + name + 'in address: ' + city + 'bought: ' + item.unit + item.category +'.'"></h2>
+            <h2 data-bind="text: '<' + ' ' + 'Customer : '  + name + ' ' + 'in city: ' + city  + ' ' + 'bought: ' + unit + category +'.'"></h2>
         </div>
     </div>
     <a class="forkit" data-text="Setting" data-text-detached="Setting" href="https://github.com/hakimel/forkit.js">
@@ -52,16 +42,20 @@
     </a>
     <!-- </div> -->
 
-    <div class="buttonTest">
+    <div class="buttonTest" data-bind="foreach: changeInfo">
         <p>
-            <span id="dx" hidden="hidden">?</span>
-            <span id="dy" hidden="hidden">?</span>
-            <span id="name" hidden="hidden">?</span>
-            <span id="city" hidden="hidden">?</span>
-            <span id="unit" hidden="hidden">?</span>
-            <span id="category" hidden="hidden">?</span>
+            <span id="dx" >?</span>
+            <span id="dy" >?</span>
+            <span id="name" data-bind="text:name">?</span>
+            <span id="city" data-bind="text:city">?</span>
+            <span id="unit" data-bind="text:unit">?</span>
+            <span id="category" data-bind="text:category">?</span>
         <p>
         <a href=# id="calculate" data-bind="click: addCustomer">generate</a>
+    </div>
+
+    <div class="modelCurtain">
+        
     </div>
 
 </body>
