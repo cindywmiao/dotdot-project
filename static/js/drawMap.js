@@ -17,8 +17,19 @@ var drawMap = function() {
         $.getJSON($SCRIPT_ROOT + '/_add_numbers', {}, function(data) {
             $('#dx').text(data.x);
             $('#dy').text(data.y);
+            $('#name').text(data.name);
+            $('#city').text(data.city);
+
+            $('#unit').text(data.unit);
+            $('#category').text(data.category);
+
             var x = $('#dx').text();
             var y = $('#dy').text();
+            var name = $('#name').text();
+            var city = $('#city').text();
+            var unit = $('#unit').text();
+            var category = $('#category').text();
+
 
             ctx.beginPath();
             ctx.fillStyle = radial;

@@ -1,0 +1,63 @@
+Accessory , Bag
+Accessory , Hair Accessory
+Accessory , Season Accessory
+Accessory , Suitcase
+Accessory , Travel Pouch / Accessory
+Accessory , Watch, Jewely, Glasses
+Baby Core , Diapering
+Baby Core , Formula
+Baby Core , Wipes
+Baby Non Core , Baby Fashion
+Baby Non Core , Feeding
+Baby Non Core , Gear
+Baby Non Core , Strollers and Carseats
+Beauty , Fragrance
+Beauty , Makeup
+Beauty , Nailcare
+Beauty , Skin Care
+Beauty , Tools & Accessories
+Clothes , Casual Clothes
+Clothes , Men Clothes
+Clothes , Underwear & Homewear
+Clothes , Women Clothes
+Electronics , Computer
+Electronics , Digital
+Electronics , Electronics
+Food , Beverages
+Food , Coffee & tea
+Food , Cold & Frozen food
+Food , Fresh
+Food , Healthy food
+Food , Meal essentials
+Food , Snacks
+Home , Bath Acc. / Household Cleaning
+Home , Bedding / Handcraft / Curtain
+Home , Car Acc. / DIY
+Home , Furniture / Storage
+Home , Home Deco
+Household , Detergent
+Household , Tissue
+Kitchen , Cookware
+Kitchen , Food Storage
+Kitchen , Kitchen Accessories
+Kitchen , Kitchen Appliance
+Kitchen , Outdoor Kitchen
+Kitchen , Tableware
+Kitchen , Tools & Gadgets
+Personal Care , Body Care
+Personal Care , Hair Care
+Personal Care , Health Care
+Personal Care , Mom&Baby Care
+Personal Care , Oral Care
+Personal Care , Personal Care
+Pet , Cat
+Pet , Dog
+Pet , Small Animals
+Shoes , Fashion Shoes
+Shoes , Sports Accessory
+Shoes , Sports Clothes
+Shoes , Sports Shoes
+Shoes , Sports Supplies
+Toys , Books
+Toys , Stationery
+Toys , Toys
