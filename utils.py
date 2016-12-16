@@ -16,8 +16,8 @@ height = 820
 # length_height = right_up_y - left_down_y
 
 def coordinate2pixel(longitude, latitude):
-    y = height - ((float(latitude) + 90.0) * height) / 180.0 + 75
-    x = width - ((float(longitude) + 180.0) * width) / 360.0
+    x = ((float(latitude) + 90.0) * height) / 180.0
+    y = ((float(longitude) + 180.0) * width) / 360.0
     return {'x': int(math.floor(x)), 'y': int(math.floor(y))}
 
 

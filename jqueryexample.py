@@ -47,13 +47,9 @@ def add_numbers():
     customer.save()
     index_counter_customers += 1
 
-    # longitude = customer.user.longitude()
-    # latitude = customer.user.latitude()
-
     random_number = utils.random_int()
     longitude = longitudes[random_number % 9000]
     latitude = latitudes[random_number % 9000]
-    result = utils.coordinate2pixel(longitude, latitude)
 
     global index_counter_items
     global lines
@@ -61,13 +57,14 @@ def add_numbers():
     item.save()
     index_counter_items += 1
 
-    return jsonify(x=result['x'], y=result['y'], name = customer.user.name(), city = customer.user.city(),
+    return jsonify(x=latitude, y=longitude, name = customer.user.name(), city = customer.user.city(),
                    unit = item.unit, category = item.category)
 
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     utils.delete_db(database_path)

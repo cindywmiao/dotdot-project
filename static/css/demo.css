@@ -1,8 +1,6 @@
 body {
-    background: #323232;
     font-family: 'Lato', Times, 'Times New Roman', serif;
     font-size: 16px;
-    color: #eee;
     overflow-x: hidden;
 }
 a {
@@ -22,15 +20,7 @@ article {
     margin: 20px;
     width: 480px;
 }
-h1,
-h2 {
-    font-size: 24px;
-    display: inline-block;
-}
 
-h2 {
-    color: #ccc;
-}
 
 p {
     margin: 10px 0 10px 0;

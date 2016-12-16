@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="../static/css/forkit.css">
 <!--     <link rel="stylesheet" href="../static/css/terminalPage.css"> -->
     <link rel="stylesheet" href="../static/css/showInfo.css">
+    <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            html, body, #wrapper{
+                height: 100%;
+                width: 100%;
+            }
+            #map {
+                height: 100%;
+                width: 100%;
+            }
+            #wrapper { position: absolute; min-height: 100%; }
+            #over_map { position: absolute; top: 10px; left: 10px; z-index: 99; }
+    </style>
     <script type="text/javascript">
     var $SCRIPT_ROOT = {{
             request.script_root | tojson | safe
@@ -17,11 +30,19 @@
     <script src="../static/js/jquery-1.12.3.js"></script>
     <script src="../static/js/knockout.js"></script>
     <script src="../static/js/flotr2.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+function myFunction() {
+    document.getElementById("demo").style.color = "red";
+}
+</script>
 </head>
 
 <body>
+    <div id="map">
+        </div>
     <div class="container">
-        <img class="map" src="../static/images/background_old.jpg">
+        <div id="over_map">
         <div class="coupang">
             <h1 class="font-coupang" brand-color="c">c</h1>
             <h1 class="font-coupang" brand-color="o">o</h1>
@@ -43,33 +64,37 @@
         </a>
         <div class="buttonTest">
             <p>
-                <span id="dx"></span>
-                <span id="dy"></span>
-                <span id="name">Monica Huang</span>
-                <span id="city">ShangHai</span>
-                <span id="unit">Personal Care</span>
-                <span id="category">Oral Care</span>
+                <span id="dx" hidden="hidden"></span>
+                <span id="dy" hidden="hidden"></span>
+                <span id="name" hidden="hidden">Monica Huang</span>
+                <span id="city" hidden="hidden">ShangHai</span>
+                <span id="unit" hidden="hidden">Personal Care</span>
+                <span id="category" hidden="hidden">Oral Care</span>
             </p>
-            <a href=# id="calculate" data-bind="click: addCustomer">generate</a>
+            <a href=# id="calculate" data-bind="click: addCustomer" hidden="hidden">generate</a>
+
         </div>
-        <div class="modelCurtain" id="chart">
-        </div>
+
         <div class="buttonTest">
             <p>
-                <span id="top1">?</span>
-                <span id="prob1">?</span>
-                <span id="top2">?</span>
-                <span id="prob2">?</span>
-                <span id="top3">?</span>
-                <span id="prob3">?</span>
+                <span id="top1" hidden="hidden">?</span>
+                <span id="prob1" hidden="hidden">?</span>
+                <span id="top2" hidden="hidden">?</span>
+                <span id="prob2" hidden="hidden">?</span>
+                <span id="top3" hidden="hidden">?</span>
+                <span id="prob3" hidden="hidden">?</span>
             </p>
         </div>
+            </div>
+        <div class="modelCurtain" id="chart">hkghg
+        </div>
     </div>
+
 </body>
 <script src="../static/js/forkit.js"></script>
 <script src="../static/js/geolocation.js"></script>
 <script src="../static/js/drawMap.js"></script>
-<!-- <script src="../static/js/terminalPage.js"></script> -->
+<script src="../static/js/map2.js"></script>
 
 
 </html>

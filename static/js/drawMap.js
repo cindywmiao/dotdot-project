@@ -1,66 +1,4 @@
 //draw the map dot
-var drawMap = function() {
-    var canvas = document.getElementById("myCanvas");
-    canvas.width = window.screen.availWidth;
-    canvas.height = window.screen.availHeight;
-    var ctx = canvas.getContext("2d");
-
-    $('a#calculate').unbind('click').click(function() {
-        $.getJSON($SCRIPT_ROOT + '/_add_numbers', {}, function(data) {
-            $('#dx').text(data.x);
-            $('#dy').text(data.y);
-            $('#name').text(data.name);
-            $('#city').text(data.city);
-            $('#unit').text(data.unit);
-            $('#category').text(data.category);
-            var x = $('#dx').text(),
-                y = $('#dy').text();
-
-            ctx.beginPath();
-            //ctx.fillStyle = RGB(171,181,118);
-            ctx.fillStyle = 'yellow';
-            ctx.arc(x, y, 2, 0, 2 * Math.PI, false);
-            ctx.fill();
-        });
-    });
-
-    //make data loading automatically
-    var trigeerClick = function() {
-            $('a#calculate').trigger('click');
-        }
-    setInterval(trigeerClick, Math.random()*100+100);
-
-}
-drawMap();
-
-function showInfoModel() {
-    var self = this;
-
-    self.customerInfo = ko.observableArray(
-        [{
-            name: 'userName',
-            city: 'city',
-            unit: 'unit',
-            category: 'category'
-
-        }]
-    );
-    self.addCustomer = function() {
-        var name_c = $('#name').text(),
-            city_c = $('#city').text(),
-            unit_c = $('#unit').text(),
-            category_c = $('#category').text();
-
-        self.customerInfo.push({
-            name: name_c,
-            city: city_c,
-            unit: unit_c,
-            category: category_c
-        });
-    };
-}
-
-ko.applyBindings(new showInfoModel(), document.querySelector('.container'));
 
 $("canvas#myCanvas").on("mousedown", function(e) {
     $.getJSON($SCRIPT_ROOT + '/_add_prob', {}, function(data) {
@@ -107,6 +45,9 @@ $("canvas#myCanvas").on("mousedown", function(e) {
         Flotr.draw(document.getElementById("chart"), dataTatal, {
             pie: {
                 show: true,
+                labelFormatter : function(pie, slice){
+                return null;  //去除Label
+            }
             },
             yaxis: {
                 showLabels: false,
